@@ -2,4 +2,4 @@
 i = 5
 while i < 100:
     print( i )
-    i = i + 15
+    i = i + 2
