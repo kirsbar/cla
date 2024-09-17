@@ -4,20 +4,21 @@ from manovichdata import *
 
 
 for n in numerical:
-    print(n) 
+        index=int(sys.argv) 
+        print(n) 
 
 
 for m in modularity:
-    print(m)
+        print(m)
 
 
 for a in automation:
-    print(a)
+        print(a)
 
 
 for v in variability:
-    print(v)
+        print(v)
 
 
 for t in transcoding:
-    print(t)
+        print(t)
