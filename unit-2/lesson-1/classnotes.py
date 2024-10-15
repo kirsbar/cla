@@ -80,3 +80,15 @@ print(dictionary)
 #### so depending on the number, it prints the item in the list according to the number, if I have a list of 5 items, and input "2" it will print the last three, and not the first two
 # for item in range(1, len(myList)):
 #     print(myList[item])
+
+
+from os import listdir, path
+from PIL import Image, ExifTags
+
+files = listdir("images")
+img = Image.open(path.join("images", "0.jpg"))
+exifData = img.getexif()
+
+print(exifData)
+for key in img.getexif().keys():
+    print(key, ExifTags.TAGS[key])
