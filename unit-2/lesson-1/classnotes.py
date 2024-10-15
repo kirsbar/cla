@@ -45,7 +45,7 @@ dictionary["total"] = 0
 
 ### use for loops because it's to update value in dictionary, so you need access to each item, need to loop over things in the dictionary
 ### item is variable!! 
-### .item() is something you can use on a dictionary and saying that each tuple/pair is an item 
+### .items() is something you can use on a dictionary and saying that each tuple/pair is an item 
 for item in dictionary.items():
     # print(item)
     #### gives access specifically to one thing in the item pair

@@ -47,24 +47,54 @@
 
 file = open("hamlet.txt" , "r")
 # ### this is a dictionary 
-# word_counts = {}
+word_counts = {}
 common_words = ["the", "and", "of", "to", "I"]
-
 
 ### for each line in hamlet
 for line in file:
     ### for each word in each line in hamlet
     for word in line.split():
         ### if the word is in the common_words list
-        if word in common_words:
+        ## if word in common_words:
             ## words = common_words.pop(0)
             ##### tried .pop() but it's for the index! and don't really know that so no
-           del common_words 
-        ### make new list without the common words in common_words
-print(word_counts)
-          
+        ##    del common_words
+            ##### tried using del to delete the whole list but i'm realizing i have the right idea but i'm doing it wrong, so i'll try flipping it
+        # if word in word_counts:
+        #     del word_counts[common_words]
+        if word in word_counts:
+            word_counts[word] = word_counts[word] + 1
+        
+        ##### else word is not in word_counts, add to word count as only 1
+        else:
+            word_counts[word] = 1    
 
-# for word in word_counts:
-#     if word in common_words:
-#         word.pop(0)
-# print(common_words)
+######### basically added this section to previous code
+##### this finally worked!!!
+### okay so i did in fact get this from google but it's basically what i was thinking but just flipped
+### so again making the variable "word" mean any word from the list of common words
+for word in common_words:
+    ### if the word is also in the dictionary
+    if word in word_counts:
+        ### delete those words in the common words list from the whole dictionary
+        del word_counts[word]
+##########
+
+allPairs = iter((word_counts.items()))
+            
+Pair = next(allPairs)
+# for items in word_counts.items():
+#     # items = sorted(word_counts)
+#     print(items)
+# l = sorted(word_counts.items())
+
+mostFrequent1 = Pair[0]
+for word in word_counts:
+    if word_counts[word] > word_counts[mostFrequent1]:
+        mostFrequent1 = word
+### mostFrequent1 = "the" : 141
+
+
+print(word_counts)
+print("the most frequent word that isn't common:", mostFrequent1, "!!!")
+#### more interesting (but kinda not really) most frequent word: "in" appearing 65 times
