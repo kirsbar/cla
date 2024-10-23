@@ -88,5 +88,5 @@ for word in word_counts:
     if word_counts[word] > word_counts[mostFrequent1]:
         mostFrequent1 = word
 
-print("fun fact! the first most common word here is:", mostFrequent1, "\nit appears", word_counts[mostFrequent1], "times!")
+print("fun fact! the most common word here is:", mostFrequent1, "\nit appears", word_counts[mostFrequent1], "times!")
 
